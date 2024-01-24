@@ -1,18 +1,18 @@
 steps:
 - id: Build-docker
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'asia.gcr.io/$PROJECT_ID/production/my-static-web-app:$latest', '.']
+  args: ['build', '-t', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA', '.']
   timeout: 900s
 
 - id: Push-docker
   name: 'gcr.io/cloud-builders/docker'
-  args: ['Push', 'asia.gcr.io/$PROJECT_ID/production/my-static-web-app:$latest']
+  args: ['Push', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA']
   timeout: 900s
 
 - id: envSubst-for-deployment.yml
   name: 'gcr.io/$PROJECT_ID/envsubst'
   env:
-    - 'latest=$latest'
+    - 'SHORT_SHA=$SHORT_SHA'
     - 'PROJECT_ID=$PROJECT_ID'
   args: ['deployment.yaml']
 
