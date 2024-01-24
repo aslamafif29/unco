@@ -1,19 +1,19 @@
 steps:
 - id: Build-docker
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA', '.']
+  args: ['build', '-t', 'asia.gcr.io/unco-412009/production/unco:$SHORT_SHA', '.']
   timeout: 900s
 
 - id: Push-docker
   name: 'gcr.io/cloud-builders/docker'
-  args: ['Push', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA']
+  args: ['Push', 'asia.gcr.io/unco-412009/production/unco:$SHORT_SHA']
   timeout: 900s
 
 - id: envSubst-for-deployment.yml
-  name: 'gcr.io/$PROJECT_ID/envsubst'
+  name: 'gcr.io/unco-412009/envsubst'
   env:
     - 'SHORT_SHA=$SHORT_SHA'
-    - 'PROJECT_ID=$PROJECT_ID'
+    - 'unco-412009=unco-412009'
   args: ['deployment.yaml']
 
 - id: Deploy-to-GKE
