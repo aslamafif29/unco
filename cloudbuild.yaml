@@ -9,7 +9,7 @@ steps:
   args: ['push', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA']
   timeout: 900s
 
-- id: envSubst-for-deployment.yml
+- id: envSubst-for-deployment.yaml
   name: 'gcr.io/$PROJECT_ID/envsubst'
   env:
     - 'SHORT_SHA=$SHORT_SHA'
@@ -17,7 +17,7 @@ steps:
   args: ['deployment.yaml']
 
 - id: Deploy-to-GKE
-  name: "gcr.io/cloud-builders/gke-deploy"
+  name: 'gcr.io/cloud-builders/gke-deploy'
   args:
   - run
   - --filename=deployment.yaml
