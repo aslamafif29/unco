@@ -55,7 +55,7 @@ metadata:
   name: unco
   namespace: production
 spec:
-  maxReplicas: 10
+  maxReplicas: 25
   minReplicas: 3
   scaleTargetRef:
     apiVersion: apps/v1
@@ -65,7 +65,7 @@ spec:
 
 ----------------------------
 apiVersion: networking.k8s.io/v1
-kind: ingress
+kind: Ingress
 metadata:
   name: unco
   namespace: production
