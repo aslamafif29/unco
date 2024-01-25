@@ -20,7 +20,7 @@ spec:
     targetPort: 80
   type: NodePort
 
-  ----------------------
+-----------------------
   apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -39,7 +39,7 @@ spec:
       spec:
         containers: 
         - name: unco
-          image: asia.gcr.io/$PROJECT_ID/Poduction/unco:$SHORT_SHA
+          image: asia.gcr.io/$PROJECT_ID/poduction/unco:$SHORT_SHA
           imagePullPolicy: Always
           ports:
           - containerPort: 80
