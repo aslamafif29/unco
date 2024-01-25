@@ -32,7 +32,7 @@ spec:
         app: unco
     strategy:
       type: RollingUpdate
-    template: #Template for container
+    template: index.html
       metadata:
         labels:
           app: unco
