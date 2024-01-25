@@ -17,12 +17,14 @@ steps:
   args: ['deployment.yaml']
 
 - id: Deploy-to-GKE
-  name: 'gcr.io/cloud-builders/gke-deploy'
+  name: "gcr.io/cloud-builders/gke-deploy" 
   args:
   - run
   - --filename=deployment.yaml
-  - --cluster=unco-production
+  - --cluster=wooless-production
   - --location=asia-southeast2-a
   timeout: 900s
 
-  # Global Timeout .....
+# Global Timeout
+timeout: '3600s'
+
