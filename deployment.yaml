@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   name: production
 
------------------------
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -20,7 +20,7 @@ spec:
     targetPort: 80
   type: NodePort
 
------------------------
+---
   apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -48,7 +48,7 @@ spec:
             requests:
               cpu: 50m
 
-----------------------------
+---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -63,7 +63,7 @@ spec:
     name: unco
   targetCPUUtilizationPercentage: 100
 
-----------------------------
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -86,7 +86,7 @@ spec:
             port:
               number: 80
 
---------------------
+---
 apiVersion: networking.gke.io/v1beta2
 kind: ManagedCertificate
 metadata:
