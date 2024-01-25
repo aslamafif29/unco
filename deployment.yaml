@@ -32,14 +32,14 @@ spec:
         app: unco
     strategy:
       type: RollingUpdate
-    template: index.html
+    template:
       metadata:
         labels:
           app: unco
       spec:
         containers: 
         - name: unco
-          image: asia.gcr.io/$PROJECT_ID/poduction/unco:$SHORT_SHA
+          image: asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA
           imagePullPolicy: Always
           ports:
           - containerPort: 80
