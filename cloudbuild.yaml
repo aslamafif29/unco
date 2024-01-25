@@ -6,7 +6,7 @@ steps:
 
 - id: Push-docker
   name: 'gcr.io/cloud-builders/docker'
-  args: ['Push', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA']
+  args: ['push', 'asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA']
   timeout: 900s
 
 - id: envSubst-for-deployment.yml
