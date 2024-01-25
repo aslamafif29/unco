@@ -17,8 +17,6 @@ steps:
   args: ['deployment.yaml']
 
 
-
-
 - id: Deploy-to-GKE
   name: "gcr.io/cloud-builders/gke-deploy" 
   args:
