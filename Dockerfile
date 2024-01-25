@@ -13,4 +13,4 @@ COPY unco/ .
 EXPOSE 80
 
 # Command to start nginx when the container runs
-CMD ["nginx","docker build -t unco .","docker run -p 8080:80 unco",, "-g", "daemon off;"]
+CMD ["nginx","docker build -t unco .","docker run -p 8080:80 unco", "-g", "daemon off;"]
