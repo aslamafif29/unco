@@ -17,15 +17,16 @@ steps:
   args: ['deployment.yaml']
 
 
-# deploy container image to GKE
+
+
 - id: Deploy-to-GKE
-  name: "gcr.io/cloud-builders/gke-deploy"
+  name: "gcr.io/cloud-builders/gke-deploy" 
   args:
   - run
   - --filename=deployment.yaml
-  - --image=gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA
-  - --location=asia-southeast2-a
   - --cluster=unco-production
+  - --location=asia-southeast2-a
+  timeout: 900s
 
 # Global Timeout
 timeout: '3600s'
