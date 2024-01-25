@@ -39,7 +39,7 @@ spec:
       spec:
         containers: 
         - name: unco
-          image: asia.gcr.io/$PROJECT_ID/poduction/unco:$SHORT_SHA
+          image: gcr.io/$PROJECT_ID/poduction/unco:$SHORT_SHA
           imagePullPolicy: Always
           ports:
           - containerPort: 80
