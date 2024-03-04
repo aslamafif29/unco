@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: unco
+    namespace: production
+  spec:
+    selector:
+      matchLabels:
+        app: unco
+    strategy:
+      type: RollingUpdate
+    template:
+      metadata:
+        labels:
+          app: unco
+      spec:
+        containers: 
+        - name: unco
+          image: asia.gcr.io/$PROJECT_ID/production/unco:$SHORT_SHA
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+            name: unco
+          resources:
+            requests:
+              cpu: 50m

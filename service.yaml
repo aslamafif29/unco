@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: unco
+  namespace: production
+  labels:
+    app: unco
+spec:
+  selector:
+    app: unco
+  ports:
+  - port: 80
+    name: http
+    targetPort: 80
+  type: NodePort
