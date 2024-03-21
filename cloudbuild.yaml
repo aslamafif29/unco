@@ -21,7 +21,12 @@ steps:
   name: "gcr.io/cloud-builders/gke-deploy" 
   args:
   - run
-  - --filename=deployment.yaml
+  - --filename=ssl.yaml
+  - --filename=ingress.yaml
+  - --filename=autoscaling.yaml
+  - --filename=deploy.yaml
+  - --filename=service.yaml
+  - --filename=namespace.yaml
   - --cluster=unco-production
   - --location=asia-southeast2-a
   timeout: 900s
