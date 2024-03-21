@@ -5,4 +5,4 @@ metadata:
   namespace: production
 spec:
   domains: 
-    - aslamgcp.my.id
+    - 34.128.70.244

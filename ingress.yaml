@@ -9,7 +9,7 @@ metadata:
     networking.gke.io/managed-certificates: unco
 spec:
   rules:
-  - host: aslamgcp.my.id
+  - host: 34.128.70.244
     http:
       paths:
       - path: /*
